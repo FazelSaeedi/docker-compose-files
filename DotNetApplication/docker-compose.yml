@@ -1,0 +1,14 @@
+version: '2'
+ 
+
+
+
+services:
+  app:
+    build:
+      context:  ./dotnetdocker
+      dockerfile: Dockerfile
+    expose:
+      - "5000"
+    links:
+      - "sql-server-db"
