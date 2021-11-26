@@ -6,8 +6,8 @@ services:
     container_name: sql-server-db
     image: mcr.microsoft.com/mssql/server:2019-latest
     ports:
-      - "14331:1433"
+      - "1433:1433"
     environment:   
-      SA_PASSWORD: "fazels36123456789#"
+      SA_PASSWORD: "Pass@word"
       ACCEPT_EULA: "Y"  
 
