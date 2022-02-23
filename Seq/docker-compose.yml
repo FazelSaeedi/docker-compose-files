@@ -1,0 +1,27 @@
+version: '3.5'
+
+networks:
+  booxell:
+    name: booxell
+    driver: bridge
+
+volumes: 
+  seqmonitoringlogfile:
+
+services:
+
+  seqlogmonitor:
+    image: datalust/seq:latest
+    environment:
+      - ACCEPT_EULA=Y
+    ports:
+      - "5340:80"
+    volumes: 
+    - type: volume
+      source: seqmonitoringlogfile
+      target: /data
+      volume:
+        nocopy: false
+    restart: always
+    networks:
+      - booxell
